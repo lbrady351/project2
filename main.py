@@ -15,7 +15,7 @@ def main():
         (PhotoImage(file="images/hang4.png")), (PhotoImage(file="images/hang5.png")),
         (PhotoImage(file="images/hang6.png")), (PhotoImage(file="images/hang7.png")),
         (PhotoImage(file="images/hang8.png")), (PhotoImage(file="images/hang9.png")),
-        (PhotoImage(file="images/hang10.png")),  (PhotoImage(file="images/hang11.png"))
+        (PhotoImage(file="images/hang10.png")), (PhotoImage(file="images/hang11.png"))
     ]
 
     def newGame():
