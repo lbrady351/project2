@@ -7,6 +7,7 @@ from words import word_list
 def main():
     window = Tk()
     window.title("Hangman")
+    window.resizable(False, False)
 
     photos = [
         (PhotoImage(file="images/hang0.png")), (PhotoImage(file="images/hang1.png")),
