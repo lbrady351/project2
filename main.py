@@ -1,3 +1,9 @@
+# original code: https://www.youtube.com/watch?v=esHcFbNlNqQ
+# added features: 5-letter word list in separate file,
+#   changed fonts and font color,
+#   changed outputs (showed correct word if lost),
+#   window non resizable
+
 from tkinter import *
 from tkinter import messagebox
 from string import ascii_uppercase
@@ -39,7 +45,7 @@ def main():
                         guessed[c] = letter
                     lblWord.set("".join(guessed))
                     if lblWord.get() == answer_spaces:
-                        messagebox.showinfo("Hangman", "You guessed correctly!")
+                        messagebox.showinfo("Hangman", "You guessed correctly! :)")
             else:
                 num_guesses += 1
                 imgLabel.config(image=photos[num_guesses])
@@ -52,15 +58,15 @@ def main():
     imgLabel.config(image=photos[0])
 
     lblWord = StringVar()
-    Label(window, textvariable=lblWord, font=("Helvetica 24 bold")).grid(row=0, column=3, columnspan=6, padx=10)
+    Label(window, textvariable=lblWord, font=("Times", 30, "bold")).grid(row=0, column=3, columnspan=6, padx=10)
 
     n = 0
     for lett in ascii_uppercase:
-        Button(window, text=lett, command=lambda lett=lett: guess(lett), font=("Helvetica 18"), width=4).grid(row=1+n//9, column=n%9)
+        Button(window, text=lett, command=lambda lett=lett: guess(lett), font=("Verdana", 18), width=4, fg="brown", bg="white").grid(row=1+n//9, column=n%9)
         n +=1
 
 
-    Button(window, text="New\nGame", command=lambda:newGame(), font=("Helvetica 10 bold")).grid(row=3, column=8, sticky="NSWE")
+    Button(window, text="New\nGame", command=lambda:newGame(), font=("Verdana", 10, "bold"), fg="white", bg="brown").grid(row=3, column=8, sticky="NSWE")
 
     newGame()
     window.mainloop()
